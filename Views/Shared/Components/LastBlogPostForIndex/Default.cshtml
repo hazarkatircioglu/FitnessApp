@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Blog>
+
+@foreach (var item in Model)
+{
+    <div class="single-blog">
+        <div class="blog-content">
+            <h4>
+                <a asp-action="BlogDetail" asp-route-id="@item.Id">@item.BlogTitle</a>
+            </h4>
+            <ul class="meta-box">
+                <li class="meta-date">
+                    <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>@item.Date.ToString("d")
+                    </span>
+                </li>
+            </ul>
+            <p>
+                @{
+                    if (item.BlogText != null)
+                    {
+                        var text = Regex.Replace(item.BlogText, "<.*?>", String.Empty);
+                        if (!string.IsNullOrEmpty(text) && text.Length > 350)
+                        {
+                            <span>@text.Substring(0, 350)...</span>
+                        }
+                        else
+                        {
+                            <span>@text</span>
+                        }
+                    }
+                }
+            </p>
+            <div class="makali-btn transparent-btn grey-border bittersweet-color">
+                <a asp-action="BlogDetail" asp-route-id="@item.Id">Devamını Oku</a>
+            </div>
+        </div>
+    </div>
+}          

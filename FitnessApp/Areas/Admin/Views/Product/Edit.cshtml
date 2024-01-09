@@ -1,0 +1,44 @@
+﻿@model Product
+
+<section class="content mt-5">
+    <div class="content-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Ürün Güncelle</h3>
+                    </div>
+                    <form method="post">
+                        <input type="hidden" asp-for="Id"/>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Ürün Başlığı*</label>
+                                        <input asp-for="ProductTitle" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Ürün Fiyatı*</label>
+                                        <input asp-for="ProductPrice" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Ürün Açıklaması*</label>
+                                        <textarea asp-for="ProductDescription" id="summernote"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                        </div>
+                        <div class="card-footer clearfix">
+                            <a class="btn btn-warning btn-sm float-right" asp-action="Index">Geri Dön</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Blog>
+
+<section class="content mt-5">
+    <div class="content-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-info card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Blog Listesi</h3>
+                    </div>
+                    <div class="card-body p-0 table-responsive">
+                        <table class="table table-bordered table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Tarih</th>
+                                    <th>Başlık</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Date.ToString("d")</td>
+                                        <td>@item.BlogTitle</td>
+                                        <td>
+                                            <a class="btn btn-success btn-xs" asp-action="Edit" asp-route-id="@item.Id">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#danger-@item.Id">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                            <div class="modal fade" id="danger-@item.Id">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content bg-danger">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">
+                                                                Sil
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Bu işlem geri alınamaz!</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-dark">Sil</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer clearfix">
+                        <a class="btn btn-primary btn-sm float-right" asp-action="Create">Yeni Blog Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

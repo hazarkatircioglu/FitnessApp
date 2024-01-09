@@ -1,0 +1,85 @@
+﻿@model Order
+<div class="breadcrumb-area">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb-list">
+            <li class="breadcrumb-item"><a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+            <li class="breadcrumb-item active">Satın Al</li>
+        </ol>
+    </div>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="ProductId" name="ProductId" value="@ViewBag.data.Id" />
+    <div class="checkout-area white-bg ptb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="checkbox-form mb-sm-40">
+                        <h3>Sipariş Detayları</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="checkout-form-list mb-sm-30">
+                                    <label>Ad Soyad*</label>
+                                    <input asp-for="NameSurname" type="text" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list mb-sm-30">
+                                    <label>Telefon Numarası*</label>
+                                    <input asp-for="PhoneNumber" type="text" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list mb-sm-30">
+                                    <label>Email*</label>
+                                    <input asp-for="Email" type="text" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list mb-sm-30">
+                                    <label>Adres*</label>
+                                    <input asp-for="Address" type="text" required />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list mb-sm-30">
+                                    <label>Açıklama</label>
+                                    <input asp-for="Description" type="text" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="your-order">
+                        <div class="your-order-table table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="product-name">Ürün Adı</th>
+                                        <th class="product-total">Tutar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="cart_item">
+                                        <td class="product-name">
+                                            @ViewBag.data.ProductTitle
+                                        </td>
+                                        <td class="product-total">
+                                            <span class="amount">@ViewBag.data.ProductPrice.ToString("0.00") ₺</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="payment-method">
+                            <div class="wc-proceed-to-checkout text-center">
+                                <button class="btn btn-dark" type="submit">Siparişi Tamamla</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

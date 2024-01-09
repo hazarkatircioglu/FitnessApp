@@ -1,0 +1,71 @@
+﻿@model Order
+
+<section class="content mt-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-info card-outline">
+                    <div class="card-body box-profile">
+                        <h3 class="profile-username text-center">
+                            Kullanıcı Bilgileri
+                        </h3>
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Ad Soyad</b> <label class="text-secondary float-right">@Model.AppUser?.NameSurname</label>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Telefon Numarası</b> <label class="text-secondary float-right">@Model.AppUser?.PhoneNumber</label>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Email</b> <label class="text-secondary float-right">@Model.AppUser?.Email</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card card-info card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Ödeme Bilgileri</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>Tarih:</b>  @Model.Date.ToString("g")</p>
+                                <p><b>Ad Soyad:</b>  @Model.NameSurname</p>
+                                <p><b>Telefon Numarası:</b>  @Model.PhoneNumber</p>
+                                <p><b>Email:</b>  @Model.Email</p>
+                                <p><b>Adres:</b>  @Model.Address</p>
+                                <p><b>Açıklama:</b>  @Model.Description</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>Ürün Adı:</b>  @Model.Product?.ProductTitle</p>
+                                <p><b>Tutar:</b>  @Model.Product?.ProductPrice</p>
+                                <p><b>Ürün Açıklaması:</b> @Html.Raw(Model.Product?.ProductDescription)</p>
+                            </div>
+                        </div>
+                        <form method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Program: </label>
+                                        <textarea asp-for="TrainingProgram" id="summernote"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Gönder</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+
+
+                    </div>
+                    <div class="card-footer clearfix">
+                        <a class="btn btn-warning btn-sm float-right" asp-action="Index">Geri Dön</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

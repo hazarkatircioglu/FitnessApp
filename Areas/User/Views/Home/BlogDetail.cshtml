@@ -1,0 +1,47 @@
+﻿@model Blog
+<div class="breadcrumb-area">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb-list">
+            <li class="breadcrumb-item"><a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+            <li class="breadcrumb-item"><a asp-area="User" asp-controller="Home" asp-action="Blog">Blog</a></li>
+            <li class="breadcrumb-item active">@Model.BlogTitle</li>
+        </ol>
+    </div>
+</div>
+<div class="blog-details-area white-bg ptb-90">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-9 col-lg-8">
+                <div class="blog-details mb-all-40">
+                    <div class="text-upper-portion">
+                        <h3 class="blog-dtl-header portfolio-header">@Model.BlogTitle</h3>
+                        <ul class="meta-box meta-blog d-flex">
+                            <li class="meta-date">
+                                <span>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>@Model.Date.ToString("d")
+                                </span>
+                            </li>
+                        </ul>
+                        <p class="mb-20">
+                          @if (Model.BlogText!=null)
+                            {
+                                @Html.Raw(Model.BlogText)
+                            }
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4">
+                <div class="blog-sidebar right-sidebar mt-all-80">
+                    <div class="categorie recent-post mb-60">
+                        <h3 class="sidebar-header">Son Bloglar</h3>
+                        <ul class="categorie-list">
+                            @await Component.InvokeAsync("LastBlogPostForBlogDetail")
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

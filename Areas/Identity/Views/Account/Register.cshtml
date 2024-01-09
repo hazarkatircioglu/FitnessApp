@@ -1,0 +1,57 @@
+﻿@model RegisterVM
+
+<div class="breadcrumb-area">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb-list">
+            <li class="breadcrumb-item"><a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+            <li class="breadcrumb-item active">Kayıt Ol</li>
+        </ol>
+    </div>
+</div>
+<div class="register-area ptb-90">
+    <div class="container">
+        <h3 class="login-header">Bir hesap oluşturun</h3>
+        <div class="row">
+            <div class="offset-xl-1 col-xl-10">
+                <div class="register-form login-form clearfix">
+                    <form method="post">
+                        <p>Zaten hesabınız var mı? <a asp-area="User" asp-controller="Home" asp-action="Index">Bunun yerine giriş yapın!</a></p> 
+                        <div class="form-group row mb-20">
+                            <label for="f-name" class="col-lg-3 col-md-3 col-form-label">Ad Soyad</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input asp-for="NameSurname" type="text" class="form-control" id="f-name">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-20">
+                            <label for="email" class="col-lg-3 col-md-3 col-form-label">Email</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input asp-for="Email" type="text" class="form-control" id="email">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-20">
+                            <label for="l-name" class="col-lg-3 col-md-3 col-form-label">Telefon Numarası</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input asp-for="PhoneNumber" type="text" class="form-control" id="l-name">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-20">
+                            <label for="inputPassword" class="col-lg-3 col-md-3 col-form-label">Parola</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input asp-for="Password" type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-20">
+                            <label for="inputPassword" class="col-lg-3 col-md-3 col-form-label">Parola Tekrar</label>
+                            <div class="col-lg-6 col-md-6">
+                                <input asp-for="ConfirmPassword" type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                        <div class="register-box mt-40">
+                            <button type="submit" class="login-btn float-right">Kayıt Ol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@model MailSettings
+
+<section class="content mt-5">
+    <div class="content-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Email Ayarlarını Güncelle</h3>
+                    </div>
+                    <form method="post">
+                        <input type="hidden" asp-for="MailSettingsId" />
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Gönderen Email Adresi*</label>
+                                        <input asp-for="FromEmailAddress" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Gönderen Email Adresi Görünen Ad*</label>
+                                        <input asp-for="FromEmailAddressDisplayName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Gönderilecek Email Adresi*</label>
+                                        <input asp-for="SendEmailAddress" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Gönderilecek Email Adresi Görünen Ad*</label>
+                                        <input asp-for="SendEmailAddressDisplayName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Smtp Host</label>
+                                        <input asp-for="SmtpHost" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Smtp Port</label>
+                                        <input asp-for="SmtpPort" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email Adresi</label>
+                                        <input asp-for="EmailAddress" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email Şifressi</label>
+                                        <input asp-for="EmailAddressPassword" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

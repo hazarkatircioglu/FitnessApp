@@ -1,0 +1,381 @@
+﻿<!doctype html>
+<html class="no-js" lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Makali || Home - Sportwear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons --> 
+    <link rel="shortcut icon" href="~/makali/img/favicon.ico">
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="~/makali/css/font-awesome.min.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="~/makali/css/animate.css">
+    <!-- 7-stroke fonts css -->
+    <link rel="stylesheet" href="~/makali/css/pe-icon-7-stroke.min.css">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="~/makali/css/nice-select.css">
+    <!-- Jquery fancybox css -->
+    <link rel="stylesheet" href="~/makali/css/jquery.fancybox.css">
+    <!-- Jquery ui price slider css -->
+    <link rel="stylesheet" href="~/makali/css/jquery-ui.min.css">
+    <!-- Meanmenu css -->
+    <link rel="stylesheet" href="~/makali/css/meanmenu.min.css">
+    <!-- Owl carousel css -->
+    <link rel="stylesheet" href="~/makali/css/owl.carousel.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="~/makali/css/bootstrap.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="~/makali/css/default.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/makali/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="~/makali/css/responsive.css">
+
+    <!-- Modernizer js -->
+    <script src="~/makali/js/vendor/modernizr-3.5.0.min.js"></script>
+</head>
+
+<body class="template-color-4">
+    <div class="wrapper">
+        <header class="sportwear-header_style">
+            <div class="header-middle">
+                <div class="header-middle_nav position-relative">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 col-4">
+                                <div class="logo">
+                                    <a asp-area="User" asp-controller="Home" asp-action="Index">
+                                        <img src="~/makali/img/logo/logo.webp" alt="logo-image">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-none d-lg-block position-static">
+                                <nav>
+                                    <ul class="header-bottom-list d-flex justify-content-center">
+                                        <li class="active position-static">
+                                            <a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                                        </li>
+                                        <li>
+                                            <a class="drop-icon" href="#">Koçluk Al</a>
+                                            <ul class="ht-dropdown">
+                                                @await Component.InvokeAsync("ProductTitleForHeader")
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a asp-area="User" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                                        </li>
+                                        <li>
+                                            <a asp-area="User" asp-controller="Home" asp-action="Blog">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a asp-area="User" asp-controller="Home" asp-action="Contact">İletişim</a>
+                                        </li>
+                                        @if (SignInManager.IsSignedIn(User))
+                                        {
+
+                                            <li>
+                                                <a asp-area="Identity" asp-controller="Account" asp-action="Profil">Profil</a>
+                                            </li>
+                                            @if (User.IsInRole(Role.Role_Admin))
+                                            {
+                                                <li>
+                                                    <a class="text-danger" asp-area="Admin" asp-controller="User" asp-action="UserList" target="_blank">Admin Paneli</a>
+                                                </li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                <a asp-area="Identity" asp-controller="Account" asp-action="Login">Giriş</a>
+                                            </li>
+                                            <li>
+                                                <a asp-area="Identity" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-lg-3 col-8">
+                                <div class="cart-box">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <span class="pe-7s-search"></span>
+                                            </a>
+                                            <div class="categorie-search-box ht-dropdown">
+                                                <form action="#">
+                                                    <input type="text" name="search" placeholder="Search our catalog">
+                                                    <button>
+                                                        <span class="pe-7s-search"></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-menu d-block d-lg-none">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Koçluk Al</a>
+                                        <ul class="ht-dropdown">
+                                            @await Component.InvokeAsync("ProductTitleForHeader")
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="Blog">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="Contact">İletişim</a>
+                                    </li>
+                                    @if (SignInManager.IsSignedIn(User))
+                                    {
+
+                                        <li>
+                                            <a asp-area="Identity" asp-controller="Account" asp-action="Profil">Profil</a>
+                                        </li>
+                                        @if (User.IsInRole(Role.Role_Admin))
+                                        {
+                                            <li>
+                                                <a class="text-danger" asp-area="Admin" asp-controller="User" asp-action="UserList" target="_blank">Admin Paneli</a>
+                                            </li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a asp-area="Identity" asp-controller="Account" asp-action="Login">Giriş</a>
+                                        </li>
+                                        <li>
+                                            <a asp-area="Identity" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle header-sticky stick position-static-md">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <div class="header-logo">
+                                <a href="index-cosmetic.html">
+                                    <img src="~/makali/img/logo/logo.webp" alt="Makali's Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 d-none d-lg-block position-static">
+                            <nav>
+                                <ul class="header-bottom-list d-flex justify-content-end">
+                                    <li class="active position-static">
+                                        <a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                                    </li>
+                                    <li>
+                                        <a  href="#">Koçluk Al</a>
+                                        <ul class="ht-dropdown">
+                                            @await Component.InvokeAsync("ProductTitleForHeader")
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="Blog">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="User" asp-controller="Home" asp-action="Contact">İletişim</a>
+                                    </li>
+                                    @if (SignInManager.IsSignedIn(User))
+                                    {
+
+                                        <li>
+                                            <a asp-area="Identity" asp-controller="Account" asp-action="Profil">Profil</a>
+                                        </li>
+                                        @if (User.IsInRole(Role.Role_Admin))
+                                        {
+                                            <li>
+                                                <a class="text-danger" asp-area="Admin" asp-controller="User" asp-action="UserList" target="_blank">Admin Paneli</a>
+                                            </li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a asp-area="Identity" asp-controller="Account" asp-action="Login">Giriş</a>
+                                        </li>
+                                        <li>
+                                            <a asp-area="Identity" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="mobile-menu d-block d-lg-none">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                                </li>
+                                <li>
+                                    <a href="#">Koçluk Al</a>
+                                    <ul class="ht-dropdown">
+                                        @await Component.InvokeAsync("ProductTitleForHeader")
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a asp-area="User" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                                </li>
+                                <li>
+                                    <a asp-area="User" asp-controller="Home" asp-action="Blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a asp-area="User" asp-controller="Home" asp-action="Contact">İletişim</a>
+                                </li>
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+
+                                    <li>
+                                        <a asp-area="Identity" asp-controller="Account" asp-action="Profil">Profil</a>
+                                    </li>
+                                    @if (User.IsInRole(Role.Role_Admin))
+                                    {
+                                        <li>
+                                            <a class="text-danger" asp-area="Admin" asp-controller="User" asp-action="UserList" target="_blank">Admin Paneli</a>
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a asp-area="Identity" asp-controller="Account" asp-action="Login">Giriş</a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="Identity" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    </div> 
+                </div> 
+            </div> 
+        </header>
+        @RenderBody()
+
+        <!-- Footer Area Start Here -->
+        <footer class="border-top kitchenware-footer_style sportwear-footer_style bg-night-rider pb-35">
+            <div class="container">
+                <!-- Footer Middle Start -->
+                <div class="footer-middle border-top_none ptb-90">
+                    <div class="row">
+                        <!-- Single Footer Start -->
+                        <div class="col-lg-4 col-md-6 mb-all-30">
+                            <div class="single-footer">
+                                <div class="footer-logo mb-20">
+                                    <a href="#"><img class="img" src="~/makali/img/logo/logo2.webp" alt="logo-img"></a>
+                                </div>
+                                <div class="footer-content">
+                                    <ul class="footer-list first-content">
+                                        @await Component.InvokeAsync("ContactInformationForFooter")
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Footer Start -->
+                        <!-- Single Footer Start -->
+                        <div class="col-lg-4 col-md-6 mb-all-30">
+                            <div class="single-footer">
+                                <div class="single-footer">
+                                    <h4 class="footer-title">Koçluk Al</h4>
+                                    <div class="footer-content">
+                                        <ul class="footer-list">
+                                            @await Component.InvokeAsync("ProductTitleForHeader")
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-lg-4 col-md-6 mb-sm-30">
+                            <div class="single-footer">
+                                <div class="single-footer">
+                                    <h4 class="footer-title">Hızlı Linkler</h4>
+                                    <div class="footer-content">
+                                        <ul class="footer-list">
+                                            <li><a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+                                            <li><a asp-area="User" asp-controller="Home" asp-action="About">Hakkımızda</a></li>
+                                            <li><a asp-area="User" asp-controller="Home" asp-action="Blog">Blog</a></li>
+                                            <li><a asp-area="User" asp-controller="Home" asp-action="Contact">İletişim</a></li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Footer Start -->
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Footer Middle End -->
+                <!-- Footer Bottom Start -->
+                <div class="footer-bottom pt-35">
+                    <div class="col-md-12">
+                        <div class="row align-items-center justify-content-md-between">
+                            <div class="col-auto footer-copyright ">
+                                <p>
+                                    &copy; 2023
+                                   Tüm hakları saklıdır
+                                </p>
+                            </div>
+                            <div class="col-auto footer-payment">
+                                <a asp-area="User" asp-controller="Home" asp-action="Index"><img src="~/makali/img/payment/payment-2.webp" alt="payment-img" class="img"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Bottom End -->
+            </div>
+        </footer>
+        <!-- Footer Area End Here -->
+    </div>
+    <!-- Main Wrapper End Here -->
+    <!-- jquery -->
+    <script src="~/makali/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- jquery migrate -->
+    <script src="~/makali/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <!-- Countdown js -->
+    <script src="~/makali/js/jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="~/makali/js/jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="~/makali/js/jquery.scrollUp.js"></script>
+    <!-- Fancybox js -->
+    <script src="~/makali/js/jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="~/makali/js/jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="~/makali/js/jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="~/makali/js/owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="~/makali/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/makali/js/bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="~/makali/js/plugins.js"></script>
+    <!-- Main activaion js -->
+    <script src="~/makali/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html> 

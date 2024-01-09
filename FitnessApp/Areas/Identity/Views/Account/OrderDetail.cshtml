@@ -1,0 +1,62 @@
+﻿@model Order
+
+
+<div class="breadcrumb-area">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb-list">
+            <li class="breadcrumb-item"><a asp-area="User" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+            <li class="breadcrumb-item active">Profil</li>
+        </ol>
+    </div>
+</div>
+<div class="my-account white-bg ptb-90">
+    <div class="container">
+        <div class="account-dashboard">
+            <div class="row">
+                <div class="col-lg-2">
+                    <ul class="nav flex-column dashboard-list">
+                        <li><a class="nav-link active" asp-action="Profil">Siparişlerim</a></li>
+                        <li><a class="nav-link" asp-action="Logout">Çıkış</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-10">
+                    <div class="dashboard-content mt-all-40">
+                        <div id="orders">
+                            <h3>Siparişlerim</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p><b>Tarih:</b>  @Model.Date.ToString("g")</p>
+                                    <p><b>Ad Soyad:</b>  @Model.NameSurname</p>
+                                    <p><b>Telefon Numarası:</b>  @Model.PhoneNumber</p>
+                                    <p><b>Email:</b>  @Model.Email</p>
+                                    <p><b>Adres:</b>  @Model.Address</p>
+                                    <p><b>Açıklama:</b>  @Model.Description</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p><b>Ürün Adı:</b>  @Model.Product?.ProductTitle</p>
+                                    <p><b>Tutar:</b>  @Model.Product?.ProductPrice</p>
+                                    <p><b>Ürün Açıklaması:</b> @Html.Raw(Model.Product?.ProductDescription)</p>
+                                </div>
+                                <div class="col-md-4">
+
+                                    <p>
+                                        <b>Gönderilen Program:</b>
+                                        @if (Model.Status == SatinAlmaDurumlari.ProgramBekleniyor)
+                                        {
+                                            <span class="badge badge-warning">@SatinAlmaDurumlari.ProgramBekleniyor</span>
+                                        }
+                                        else if (Model.Status == SatinAlmaDurumlari.ProgramGonderildi)
+                                        {
+                                            @Html.Raw(Model.TrainingProgram)
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

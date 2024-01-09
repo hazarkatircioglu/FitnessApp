@@ -1,0 +1,41 @@
+﻿@model Contact
+@if (Model != null)
+{
+    <li><i class="pe-7s-map-marker"></i>@Model.Address</li>
+    <li><i class="pe-7s-call"></i>@Model.PhoneNumber</li>
+    <li><i class="pe-7s-clock"></i>@Model.Email</li>
+    <li class="mt-20">
+        <ul class="social-icon">
+            @if (Model.FacebookLink != null)
+            {
+                <li>
+                    <a href="@Model.FacebookLink" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+            }
+            @if (Model.InstagramLink != null)
+            {
+                <li>
+                    <a href="@Model.InstagramLink" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+            }
+            @if (Model.TwitterLink != null)
+            {
+                <li>
+                    <a href="@Model.TwitterLink" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+            }
+            @if (Model.YoutubeLink != null)
+            {
+                <li>
+                    <a href="@Model.YoutubeLink" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                </li>
+            }
+            @if (Model.LinkedinLink != null)
+            {
+                <li>
+                    <a href="@Model.LinkedinLink" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </li>
+            }
+        </ul>
+    </li>
+}

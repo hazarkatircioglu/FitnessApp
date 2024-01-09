@@ -1,0 +1,28 @@
+﻿@model About
+
+<section class="content mt-5">
+    <div class="content-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Yeni Hakkımızda Yazısı Ekle</h3>
+                    </div>
+                    <form method="post">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Hakkımızda Yazısı*</label>
+                                        <textarea asp-for="AboutText" id="summernote"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

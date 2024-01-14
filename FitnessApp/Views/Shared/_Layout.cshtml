@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Makali || Home - Sportwear</title>
+    <title>Atletic Haven</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicons --> 
-    <link rel="shortcut icon" href="~/makali/img/favicon.ico">
+    <link rel="shortcut icon" href="~/1c3ee3c3-2520-4b82-94c5-ca8db9af91fa.jpg">
     <!-- Fontawesome css -->
     <link rel="stylesheet" href="~/makali/css/font-awesome.min.css">
     <!-- Animate css -->
@@ -36,7 +36,6 @@
     <!-- Modernizer js -->
     <script src="~/makali/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
-
 <body class="template-color-4">
     <div class="wrapper">
         <header class="sportwear-header_style">
@@ -47,11 +46,11 @@
                             <div class="col-lg-3 col-4">
                                 <div class="logo">
                                     <a asp-area="User" asp-controller="Home" asp-action="Index">
-                                        <img src="~/makali/img/logo/logo.webp" alt="logo-image">
+                                        <img style="width:120px;height:70px" src="~/1c3ee3c3-2520-4b82-94c5-ca8db9af91fa.jpg" alt="logo-image">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-6 d-none d-lg-block position-static">
+                            <div class="col-lg-7 d-none d-lg-block position-static">
                                 <nav>
                                     <ul class="header-bottom-list d-flex justify-content-center">
                                         <li class="active position-static">
@@ -61,6 +60,12 @@
                                             <a class="drop-icon" href="#">Koçluk Al</a>
                                             <ul class="ht-dropdown">
                                                 @await Component.InvokeAsync("ProductTitleForHeader")
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Ürünler</a>
+                                            <ul class="ht-dropdown">
+                                                @await Component.InvokeAsync("OtherProductTitleForHeader")
                                             </ul>
                                         </li>
                                         <li>
@@ -97,7 +102,7 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="col-lg-3 col-8">
+                            <div class="col-lg-2 col-8">
                                 <div class="cart-box">
                                     <ul>
                                         <li>
@@ -127,6 +132,12 @@
                                         <a href="#">Koçluk Al</a>
                                         <ul class="ht-dropdown">
                                             @await Component.InvokeAsync("ProductTitleForHeader")
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ürünler</a>
+                                        <ul class="ht-dropdown">
+                                            @await Component.InvokeAsync("OtherProductTitleForHeader")
                                         </ul>
                                     </li>
                                     <li>
@@ -189,6 +200,12 @@
                                         </ul>
                                     </li>
                                     <li>
+                                        <a  href="#">Ürünler</a>
+                                        <ul class="ht-dropdown">
+                                            @await Component.InvokeAsync("OtherProductTitleForHeader")
+                                        </ul>
+                                    </li>
+                                    <li>
                                         <a asp-area="User" asp-controller="Home" asp-action="About">Hakkımızda</a>
                                     </li>
                                     <li>
@@ -233,6 +250,12 @@
                                     <a href="#">Koçluk Al</a>
                                     <ul class="ht-dropdown">
                                         @await Component.InvokeAsync("ProductTitleForHeader")
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Ürünler</a>
+                                    <ul class="ht-dropdown">
+                                        @await Component.InvokeAsync("OtherProductTitleForHeader")
                                     </ul>
                                 </li>
                                 <li>
@@ -284,7 +307,9 @@
                         <div class="col-lg-4 col-md-6 mb-all-30">
                             <div class="single-footer">
                                 <div class="footer-logo mb-20">
-                                    <a href="#"><img class="img" src="~/makali/img/logo/logo2.webp" alt="logo-img"></a>
+                                    <a asp-area="User" asp-controller="Home" asp-action="Index">
+                                        <img style="width:120px;height:70px" src="~/1c3ee3c3-2520-4b82-94c5-ca8db9af91fa.jpg" alt="logo-image">
+                                    </a>
                                 </div>
                                 <div class="footer-content">
                                     <ul class="footer-list first-content">

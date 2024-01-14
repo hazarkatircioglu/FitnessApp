@@ -26,6 +26,11 @@ namespace FitnessApp.Areas.User.Controllers
         {
             var data = await _context.Product.Where(x => x.Id == id).AsNoTracking().FirstOrDefaultAsync();
             return View(data);
+        } 
+        public async Task<IActionResult> OtherProductDetail(int id)
+        {
+            var data = await _context.OtherProduct.Where(x => x.Id == id).AsNoTracking().FirstOrDefaultAsync();
+            return View(data);
         }
         public async Task<IActionResult> About()
         {

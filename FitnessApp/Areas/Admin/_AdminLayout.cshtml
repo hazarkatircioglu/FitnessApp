@@ -67,6 +67,13 @@
                         <li class="nav-item">
                             <a asp-controller="Product" asp-action="Index" class="nav-link  @(ViewContext.RouteData.Values["Controller"].ToString()=="Product"?"active":"")">
                                 <p>
+                                    Koçluk Listesi
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="OtherProduct" asp-action="Index" class="nav-link  @(ViewContext.RouteData.Values["Controller"].ToString()=="OtherProduct"?"active":"")">
+                                <p>
                                     Ürün Listesi
                                 </p>
                             </a>

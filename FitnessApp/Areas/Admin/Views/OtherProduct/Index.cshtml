@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model IEnumerable<OtherProduct>
 
 <section class="content mt-5">
     <div class="content-fluid">
@@ -6,13 +6,13 @@
             <div class="col-md-12">
                 <div class="card card-info card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Koçluk Listesi</h3>
+                        <h3 class="card-title">Ürün Listesi</h3>
                     </div>
                     <div class="card-body p-0 table-responsive">
                         <table class="table table-bordered table-sm">
                             <thead>
                                 <tr>
-                                    <th>Koçluk Adı</th>
+                                    <th>Ürün Adı</th>
                                     <th>Fiyatı</th>
                                     <th>İşlem</th>
                                 </tr>
@@ -57,7 +57,7 @@
                         </table>
                     </div>
                     <div class="card-footer clearfix">
-                        <a class="btn btn-primary btn-sm float-right" asp-action="Create">Yeni Koçluk Ekle</a>
+                        <a class="btn btn-primary btn-sm float-right" asp-action="Create">Yeni Ürün Ekle</a>
                     </div>
                 </div>
             </div>

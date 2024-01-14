@@ -16,6 +16,7 @@ namespace FitnessApp.Models.Data
         public DbSet<Blog> Blog { get; set; }
         public DbSet<About> About { get; set; }
         public DbSet<Product> Product { get; set; }
+        public DbSet<OtherProduct> OtherProduct { get; set; }
         public DbSet<Contact> Contact { get; set; }
         public DbSet<MailSettings> MailSettings { get; set; }
         public DbSet<Order> Order { get; set; }
